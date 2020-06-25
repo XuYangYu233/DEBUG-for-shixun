@@ -4,7 +4,9 @@
 
 double bisection(int p, int q, double (*func)(int, int, double));
 double f(int p, int q, double x);
-int main() {
+// finish
+int main()
+{
     int p;
     int q;
     scanf("%d%d", &p, &q);
@@ -12,28 +14,34 @@ int main() {
     return 0;
 }
 
-double bisection(int p, int q, double (*func)(int, int, double)) {
-    double a = -20.0;
-    double b = 20.0;
-    double x = 0.0;
-    double fa, fb, fx;
-    
-    do {
-        fa = f(p, q, a);
-        fb = f(p, q, b);
-        x = (a + b) / 2.0;
-        fx = f(p, q, x);
-        
-        if (fa > 0 && fx > 0) {
-            a = x;
-        } else{
-            b = x;
+double bisection(int p, int q, double (*func)(int, int, double))
+{
+    double min = -20.0;
+    double max = 20.0;
+    double mid = 0.0;
+    double fmin, fmax, fmid;
+
+    do
+    {
+        fmin = func(p, q, min);
+        fmax = func(p, q, max);
+        mid = (min + max) / 2.0;
+        fmid = func(p, q, mid);
+
+        if (fmin > 0 && fmid > 0 || fmin < 0 && fmid < 0)
+        {
+            min = mid;
         }
-    } while (fx >= EPSILON);
-    
-    return x;
+        else if (fmax > 0 && fmid > 0 || fmax < 0 && fmid < 0)
+        {
+            max = mid;
+        }
+    } while (fabs(fmid) >= EPSILON);
+
+    return mid;
 }
 
-double f(int p, int q, double x) {
+double f(int p, int q, double x)
+{
     return p * x + q;
 }
