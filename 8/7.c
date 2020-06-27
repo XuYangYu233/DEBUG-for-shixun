@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-// finish
+
 int main()
 {
     int n;
@@ -9,15 +9,11 @@ int main()
     char names[n][101];
     char temp[101];
 
-    while (scanf("%c", &names[i][j]) != EOF)
-    {
-        for (i = 0; i < n; i++)
-        {
-            for (j = 0; j < 101; j++)
-            {
+    while (scanf("%c", &names[i][j]) != EOF) {
+        for (i = 0; i < n; i++) {
+            for (j = 0; j < 101; j++) {
                 scanf("%c", &names[i][j]);
-                if (names[i][j] == '\n')
-                {
+                if (names[i][j] == '\n') {
                     names[i][j] = '\0';
                     break;
                 }
@@ -25,12 +21,9 @@ int main()
         }
     }
 
-    for (i = 0; i < n - 1; i++)
-    {
-        for (j = 0; j < n - 1 - i; j++)
-        {
-            if (strlen(names[j]) < strlen(names[j + 1]))
-            {
+    for (i = 0; i < n - 1; i++) {
+        for (j = 0; j < n - 1 - i; j++) {
+            if (strlen(names[j]) < strlen(names[j + 1])) {
                 strcpy(temp, names[j]);
                 strcpy(names[j], names[j + 1]);
                 strcpy(names[j + 1], temp);
