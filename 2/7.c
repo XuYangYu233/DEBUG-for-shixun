@@ -1,5 +1,5 @@
 #include <stdio.h>
-// finish
+
 int main(void)
 {
     //declaration
@@ -7,37 +7,28 @@ int main(void)
     int i, j, k;
     //input
     scanf("%d%d", &m, &n);
-    for (i = 0; i < m; i++)
-    {
-        for (j = 0; j < n; j++)
-        {
+    for (i = 0; i < m; i++) {
+        for (j = 0; j < n; j++) {
             scanf("%d", &mtxA[i][j]);
         }
     }
-    for (i = 0; i < n; i++)
-    {
-        for (j = 0; j < m; j++)
-        {
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < m; j++) {
             scanf("%d", &mtxB[i][j]);
         }
     }
     //process
-    for (i = 0; i < m; i++)
-    {
-        for (j = 0; j < m; j++)
-        {
+    for (i = 0; i < m; i++) {
+        for (j = 0; j < m; j++) {
             mtxC[i][j] = 0;
-            for (k = 0; k < n; k++)
-            {
+            for (k = 0; k < n; k++) {
                 mtxC[i][j] += mtxA[i][k] * mtxB[k][j];
             }
         }
     }
     //output
-    for (i = 0; i < m; i++)
-    {
-        for (j = 0; j < m; j++)
-        {
+    for (i = 0; i < m; i++) {
+        for (j = 0; j < m; j++) {
             j != m - 1 ? printf("%d ", mtxC[i][j]) : printf("%d", mtxC[i][j]);
         }
         printf("\n");
