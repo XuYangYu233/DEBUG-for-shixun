@@ -1,5 +1,5 @@
 #include <stdio.h>
-// finish
+
 int main()
 {
     int n = 10;
@@ -11,17 +11,13 @@ int main()
     int j;
     int o;
     // 读入给定的数字
-    for (i = 0; i < n; i++)
-    {
+    for (i = 0; i < n; i++) {
         scanf("%d", &numbers[i]);
     }
-    for (i = 0; i < n; i++)
-    {
+    for (i = 0; i < n; i++) {
         m = i;
-        for (k = i; k < n; k++)
-        {
-            if (numbers[m] < numbers[k])
-            {
+        for (k = i; k < n; k++) {
+            if (numbers[m] < numbers[k]) {
                 m = k;
             }
         }
@@ -29,14 +25,10 @@ int main()
         numbers[i] = numbers[m];
         numbers[m] = o;
     }
-    for (i = 0; i < n; i++)
-    {
-        if (i == 9)
-        {
+    for (i = 0; i < n; i++) {
+        if (i == 9) {
             printf("%d", numbers[i]);
-        }
-        else
-        {
+        } else {
             printf("%d ", numbers[i]);
         }
     }
