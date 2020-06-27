@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-// finish
+
 int main()
 {
     char str[500], fs[33];
@@ -9,14 +9,13 @@ int main()
     memset(arr, 0, sizeof(arr));
     memset(fs, '\0', sizeof(fs));
     scanf("%s", str);
-    for (i = 1; i <= strlen(str); i++)
-    {
-        if (str[i] == '\n')
+    for (i = 1; i <= strlen(str); i++) {
+        if (str[i] == '\n') {
             break;
+        }
         arr[i % 32] += str[i - 1];
     }
-    for (i = 0; i < 32; i++)
-    {
+    for (i = 0; i < 32; i++) {
         bits[i] = arr[31 - i] ^ (arr[i] << 1);
         fs[i] = (char)(bits[i] % 85 + 34);
     }
