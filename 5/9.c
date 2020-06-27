@@ -1,21 +1,17 @@
 #include <stdio.h>
 #include <string.h>
-// finish
+
 int main()
 {
     int i, j;
-    char name[10][20] = {0};
-    for (i = 0, j = 0; i < 10; i++)
-    {
+    char name[10][20] = { 0 };
+    for (i = 0, j = 0; i < 10; i++) {
         scanf("%s", &name[i][j]);
     }
 
-    for (i = 0; i < 9; i++)
-    {
-        for (j = 0; j < 9 - i; j++)
-        {
-            if (strcmp(&name[j][0], &name[j + 1][0]) > 0)
-            {
+    for (i = 0; i < 9; i++) {
+        for (j = 0; j < 9 - i; j++) {
+            if (strcmp(&name[j][0], &name[j + 1][0]) > 0) {
                 char temp[10];
                 strcpy(temp, &name[j][0]);
                 strcpy(&name[j][0], &name[j + 1][0]);
@@ -24,8 +20,7 @@ int main()
         }
     }
 
-    for (i = 0, j = 0; i < 10; i++)
-    {
+    for (i = 0, j = 0; i < 10; i++) {
         printf("%s\n", &name[i][j]);
     }
 
