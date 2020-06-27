@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-// finish
+
 int main()
 {
     char pms[3];
@@ -21,23 +21,16 @@ int main()
     scanf("%s\n", pms);
     //printf("%s", pms);
     //输入添加或者删除的文件权限
-    while (scanf("%s", change_pms[j++]) != EOF)
-    {
-        //scanf("%s\n", change_pms[i++]);
+    while (scanf("%s", change_pms[j++]) != EOF) {
+        /*pass*/
     }
     //判断原文件的权限，用十进制表示
-    for (i = 0; i < strlen(pms); i++)
-    {
-        if (pms[i] == 'r')
-        {
+    for (i = 0; i < strlen(pms); i++) {
+        if (pms[i] == 'r') {
             a += 4;
-        }
-        else if (pms[i] == 'w')
-        {
+        } else if (pms[i] == 'w') {
             a += 2;
-        }
-        else if (pms[i] == 'x')
-        {
+        } else if (pms[i] == 'x') {
             a += 1;
         }
     }
@@ -72,36 +65,21 @@ int main()
             }
         }*/
 
-    for (i = 0; i < j/*strlen(change_pms[i])*/; i++)
-    {
-        //j = 0;
-        if (change_pms[i][0] == '+')
-        {
-            if (change_pms[i][1] == 'r')
-            {
+    for (i = 0; i < j; i++) {
+        if (change_pms[i][0] == '+') {
+            if (change_pms[i][1] == 'r') {
                 b += 4;
-            }
-            else if (change_pms[i][1] == 'w')
-            {
+            } else if (change_pms[i][1] == 'w') {
                 b += 2;
-            }
-            else if (change_pms[i][1] == 'x')
-            {
+            } else if (change_pms[i][1] == 'x') {
                 b += 1;
             }
-        }
-        else if (change_pms[i][0] == '-')
-        {
-            if (change_pms[i][1] == 'r')
-            {
+        } else if (change_pms[i][0] == '-') {
+            if (change_pms[i][1] == 'r') {
                 b -= 4;
-            }
-            else if (change_pms[i][1] == 'w')
-            {
+            } else if (change_pms[i][1] == 'w') {
                 b -= 2;
-            }
-            else if (change_pms[i][1] == 'x')
-            {
+            } else if (change_pms[i][1] == 'x') {
                 b -= 1;
             }
         }
