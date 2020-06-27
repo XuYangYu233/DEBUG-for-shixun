@@ -1,5 +1,5 @@
 #include <stdio.h>
-// finish
+
 int main()
 {
     int n;
@@ -7,13 +7,10 @@ int main()
     int j;
 
     scanf("%d", &n);
-    for (i = n; i >= 1; i--)
-    {
-        for (j = i; j >= 1; j--)
-        {
+    for (i = n; i >= 1; i--) {
+        for (j = i; j >= 1; j--) {
             printf("%d", j);
-            if (j != 1)
-            {
+            if (j != 1) {
                 printf(" ");
             }
         }
