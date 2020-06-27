@@ -1,38 +1,36 @@
 #include <stdio.h>
 #include <stdlib.h>
-// finish
-typedef struct node
-{
+
+typedef struct node {
     int data;
-    struct node *next;
+    struct node* next;
 } Node;
 
-Node *circle_create(int n);
-void count_off(Node *head, int n, int k, int m);
+Node* circle_create(int n);
+void count_off(Node* head, int n, int k, int m);
 
 int main()
 {
     int n, k, m;
     scanf("%d%d%d", &n, &k, &m);
-    Node *head = circle_create(n);
+    Node* head = circle_create(n);
     count_off(head, n, k, m);
     return 0;
 }
 
-Node *circle_create(int n)
+Node* circle_create(int n)
 {
     Node *temp, *new_node, *head;
     int i;
 
     // 创建第一个链表节点并加数据
-    temp = (Node *)malloc(sizeof(Node));
+    temp = (Node*)malloc(sizeof(Node));
     head = temp;
     head->data = 1;
 
     // 创建第 2 到第 n 个链表节点并加数据
-    for (i = 2; i <= n; i++)
-    {
-        new_node = (Node *)malloc(sizeof(Node));
+    for (i = 2; i <= n; i++) {
+        new_node = (Node*)malloc(sizeof(Node));
         new_node->data = i;
         temp->next = new_node;
         temp = new_node;
@@ -44,23 +42,18 @@ Node *circle_create(int n)
     return head;
 }
 
-void count_off(Node *head, int n, int k, int m)
+void count_off(Node* head, int n, int k, int m)
 {
-    Node *p = head;
-    Node *q;
-    if (p != NULL)
-    {
-        while (p->data != k)
-        {
+    Node* p = head;
+    Node* q;
+    if (p != NULL) {
+        while (p->data != k) {
             p = p->next;
         }
-        if (m > 1)
-        {
-            while (p != p->next)
-            {
+        if (m > 1) {
+            while (p != p->next) {
                 int j = 1;
-                while (j < m - 1)
-                {
+                while (j < m - 1) {
                     p = p->next;
                     ++j;
                 }
@@ -72,17 +65,16 @@ void count_off(Node *head, int n, int k, int m)
                 p = p->next;
             }
             printf("%d", p->data);
-        }
-        else if(m==1){
+        } else if (m == 1) {
             q = p;
-            while(p->next!=q){
+            while (p->next != q) {
                 printf("%d ", p->data);
                 p = p->next;
             }
             printf("%d", p->data);
             p = head;
             q = head;
-            while(p->next!=head){
+            while (p->next != head) {
                 p = p->next;
                 free(q);
                 q = p;
