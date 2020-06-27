@@ -1,28 +1,20 @@
 #include <stdio.h>
-// finish
+
 int main()
 {
     int a;
     int i;
     int j;
     scanf("%d", &a);
-    if (a == 2)
-    {
+    if (a == 2) {
         printf("2");
-    }
-    else
-    {
+    } else {
         printf("2\n");
-        for (j = 2; j <= a; j++)
-        {
-            for (i = 2; i < j; i++)
-            {
-                if (j % i == 0 && i != j)
-                {
+        for (j = 2; j <= a; j++) {
+            for (i = 2; i < j; i++) {
+                if (j % i == 0 && i != j) {
                     break;
-                }
-                else if (i == j - 1)
-                {
+                } else if (i == j - 1) {
                     printf("%d\n", j);
                 }
             }
