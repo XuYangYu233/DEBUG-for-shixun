@@ -1,17 +1,12 @@
 #include <stdio.h>
-// finish
+
 int f(int n)
 {
-    if (n <= 1)
-    {
+    if (n <= 1) {
         return 0;
-    }
-    else if (n <= 3)
-    {
+    } else if (n <= 3) {
         return 1;
-    }
-    else
-    {
+    } else {
         return f(n - 2) + f(n - 3);
     }
 }
