@@ -1,10 +1,10 @@
-#include <stdio.h>
 #include <math.h>
+#include <stdio.h>
 #define EPSILON 1e-7
 
 double bisection(int p, int q, double (*func)(int, int, double));
 double f(int p, int q, double x);
-// finish
+
 int main()
 {
     int p;
@@ -20,14 +20,10 @@ double bisection(int p, int q, double (*func)(int, int, double))
     min = -20;
     max = 20;
     mid = (min + max) / 2;
-    while (fabs(func(p, q, mid)) >= EPSILON)
-    {
-        if (func(p, q, min) * func(p, q, mid) < 0)
-        {
+    while (fabs(func(p, q, mid)) >= EPSILON) {
+        if (func(p, q, min) * func(p, q, mid) < 0) {
             max = mid;
-        }
-        else if (func(p, q, max) * func(p, q, mid) < 0)
-        {
+        } else if (func(p, q, max) * func(p, q, mid) < 0) {
             min = mid;
         }
         mid = (min + max) / 2.0;
