@@ -42,7 +42,7 @@ int main()
                     nIndex++;
                     times++;
                     if (times != m * n) {
-                        printf("*");
+                        printf(" ");
                     }
                 }
                 orientation++;
@@ -56,7 +56,7 @@ int main()
                     mIndex++;
                     times++;
                     if (times != m * n) {
-                        printf("*");
+                        printf(" ");
                     }
                 }
                 orientation++;
@@ -70,7 +70,7 @@ int main()
                     nIndex--;
                     times++;
                     if (times != m * n) {
-                        printf("*");
+                        printf(" ");
                     }
                 }
                 orientation++;
@@ -84,7 +84,7 @@ int main()
                     mIndex--;
                     times++;
                     if (times != m * n) {
-                        printf("*");
+                        printf(" ");
                     }
                 }
                 orientation++;

@@ -29,7 +29,7 @@ int main()
         printf("%d", matrix[0][j]);
         count++;
         if (count < max) {
-            printf("*");
+            printf(" ");
         }
     }
     //printf("\n");
@@ -54,7 +54,7 @@ int main()
             printf("%d", matrix_[0][j]);
             count++;
             if (count < max) {
-                printf("*");
+                printf(" ");
             }
         }
 

@@ -35,7 +35,7 @@ int main()
             for (j = startY; j <= endY; j++) {
                 printf("%d", matrix[startX][j]);
                 if (j < endY || startX < endX) {
-                    printf("*");
+                    printf(" ");
                 }
             }
             startX++;
@@ -46,7 +46,7 @@ int main()
             for (j = startX; j <= endX; j++) {
                 printf("%d", matrix[j][endY]);
                 if (j < endX || endX > startX - 1 && startY < endY) {
-                    printf("*");
+                    printf(" ");
                 }
             }
             startX--;
@@ -56,7 +56,7 @@ int main()
             for (j = endY - 1; j >= startY; j--) {
                 printf("%d", matrix[endX][j]);
                 if (j > startY || endX - 1 > startX && startY < endY) {
-                    printf("*");
+                    printf(" ");
                 }
             }
         }
@@ -65,7 +65,7 @@ int main()
             for (i = endX - 1; i >= startX + 1; i--) {
                 printf("%d", matrix[i][startX]);
                 if (i > startX + 1 || startY + 1 < endY) {
-                    printf("*");
+                    printf(" ");
                 }
             }
         }
