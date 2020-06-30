@@ -9,14 +9,12 @@ int main()
     char names[n][101];
     char temp[101];
 
-    while (scanf("%c", &names[i][j]) != EOF) {
-        for (i = 0; i < n; i++) {
-            for (j = 0; j < 101; j++) {
-                scanf("%c", &names[i][j]);
-                if (names[i][j] == '\n') {
-                    names[i][j] = '\0';
-                    break;
-                }
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < 101; j++) {
+            scanf("%c", &names[i][j]);
+            if (names[i][j] == '\n') {
+                names[i][j] = '\0';
+                break;
             }
         }
     }

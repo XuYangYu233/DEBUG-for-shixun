@@ -5,9 +5,9 @@ int main()
 {
     int n;
     scanf("%d\n", &n);
-    char name[100][101];
+    char name[105][105];
     int i, j;
-    char largest[101];
+    char largest[105];
     for (i = 0; i < n; i++) {
         for (j = 0; scanf("%c", &name[i][j]) != EOF && name[i][j] != '\n'; j++) {
             /*pass*/;
