@@ -28,7 +28,7 @@ int main()
         }
     }
     for (i = 0; i < m; i++) {
-        printf("??%s\n", name[i]);
+        printf("%s\n", name[i]);
     }
     return 0;
 }
