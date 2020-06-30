@@ -22,12 +22,15 @@ int main()
         scanf("%c", &temp);
         if (temp == 'w') {
             rwx ^= (1 << 1);
+        } else if (temp == '\n') {
+            goto OUT;
         }
         scanf("%c", &temp);
         if (temp == 'x') {
             rwx ^= (1 << 0);
         }
     }
+OUT:
     //modification
     while (scanf("%c", &temp) != EOF) {
         if (temp == '+') {
