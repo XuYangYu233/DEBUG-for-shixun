@@ -1,30 +1,42 @@
 #include <stdio.h>
 #include <math.h>
-int main() {
+
+void swap(int*a, int*b)
+{
+    int temp;
+    temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int main() 
+{
     int n = 10;
     int m;
     int numbers[100];
-    int i;
+    int i, j;
     
-void swap(int*a,int*b){
-    int temp;
-    temp=*a;
-    *a=*b;
-    *b=temp;
-}
-    // ¶ÁÈë¸ø¶¨µÄÊý×Ö
+
+    // è¯»å…¥ç»™å®šçš„æ•°å­—
     for (i = 0; i < n; i++) {
         scanf("%d", &numbers[i]);
-        if(numbers[i]>numbers[i+1]){
-            swap(numbers[i],numbers[i-1]);
         }
+
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < n; j++){
+            if(numbers[i] > numbers[j]) {
+            swap(&numbers[i], &numbers[j]);
+            }
+        } 
     }
+        
     
-    for(m=0;m<10;m++){
-        printf("%d",numbers[m]);
-        if(m!=9){
+    for (m = 0; m < 10; m++) {
+        printf("%d", numbers[m]);
+        if (m != 9) {
             printf(" ");
         }
     }
     return 0;
 }
+

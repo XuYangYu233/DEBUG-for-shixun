@@ -1,19 +1,28 @@
 #include <stdio.h>
 
-int main() {
+void swap(int*a, int*b)
+{
+    int temp;
+    temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int main() 
+{
     int n = 10;
     int m;
     int numbers[10];
-    int i,j;
+    int i, j;
 
-    // ¶ÁÈë¸ø¶¨µÄÊý×Ö
+    // è¯»å…¥ç»™å®šçš„æ•°å­—
     for (i = 0; i < n; i++) {
         scanf("%d", &numbers[i]);
     }
 
     for (i = 0; i < n; i++) {
         for (j = i; j < n; j++) {
-            if (numbers[i] < numbers[j]){
+            if (numbers[i] < numbers[j]) {
                 swap(&numbers[i], &numbers[j]);
             }
         }
@@ -22,7 +31,7 @@ int main() {
     for (int m = 0; m < 10; m++) {
         if (m != 9){
             printf("%d ", numbers[m]);
-        }else{
+        } else {
             printf("%d", numbers[m]);
         }
         

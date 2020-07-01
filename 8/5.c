@@ -1,26 +1,25 @@
-#include <stdio.h>
+nclude <stdio.h>
 #include <string.h>
 
-int main() {
+int main() 
+{
     int n;
     scanf("%d\n", &n);
     
-    char input;
-
-    char name[n][100];//i ´ú±íÑ§ÉúµÄ±àºÅ j ´¢´æÑ§ÉúµÄÃû×Ö
+    char name[n][300];//i ä»£è¡¨å­¦ç”Ÿçš„ç¼–å· j å‚¨å­˜å­¦ç”Ÿçš„åå­—
     
-    //¶ÁÈëËùÓĞµÄÃû×Öµ½Êı×éµÄ¸÷¸öĞĞ
+    //è¯»å…¥æ‰€æœ‰çš„åå­—åˆ°æ•°ç»„çš„å„ä¸ªè¡Œ
     for (int i = 0; i < n; i++){
         gets(name[i]);
     }
     
-    //ÕÒ³ö×î³¤µÄÃû×Ö
-    char name_max[100];
+    //æ‰¾å‡ºæœ€é•¿çš„åå­—
+    char name_max[300];
     
     strcpy(name_max, name[0]);
 
-    for(int i = 1; i < n; i++){
-        if(strlen(name_max) < strlen(name[i]))
+    for (int i = 1; i < n; i++) {
+        if (strlen(name_max) < strlen(name[i]))
             strcpy(name_max, name[i]);
     }
 
