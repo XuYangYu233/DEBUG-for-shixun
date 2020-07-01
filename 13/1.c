@@ -1,6 +1,8 @@
-#include <stdio.h>
+nclude <stdio.h>
 #include <stdlib.h>
-typedef struct node {
+
+typedef struct node 
+{
     int data;
     struct node *next;
 } Node;
@@ -8,7 +10,8 @@ typedef struct node {
 Node *circle_create(int n);
 void count_off(Node *head, int n, int k, int m);
 
-int main() {
+int main() 
+{
     int n, k, m;
     scanf("%d%d%d", &n, &k, &m);
     Node *head = circle_create(n);
@@ -16,16 +19,17 @@ int main() {
     return 0;
 }
 
-Node *circle_create(int n) {
+Node *circle_create(int n) 
+{
     Node *temp, *new_node, *head;
     int i;
 
-    // ´´½¨µÚÒ»¸öÁ´±í½Úµã²¢¼ÓÊı¾İ
+    // åˆ›å»ºç¬¬ä¸€ä¸ªé“¾è¡¨èŠ‚ç‚¹å¹¶åŠ æ•°æ®
     temp = (Node *) malloc(sizeof(Node));
     head = temp;
     head->data = 1;
 
-    // ´´½¨µÚ 2 µ½µÚ n ¸öÁ´±í½Úµã²¢¼ÓÊı¾İ
+    // åˆ›å»ºç¬¬ 2 åˆ°ç¬¬ n ä¸ªé“¾è¡¨èŠ‚ç‚¹å¹¶åŠ æ•°æ®
     for(i = 2; i <= n; i++) {
         new_node = (Node *) malloc(sizeof(Node));
         new_node->data = i;
@@ -33,41 +37,42 @@ Node *circle_create(int n) {
         temp = new_node;
     }
 
-    // ×îºóÒ»¸ö½ÚµãÖ¸ÏòÍ·²¿¹¹³ÉÑ­»·Á´±í
+    // æœ€åä¸€ä¸ªèŠ‚ç‚¹æŒ‡å‘å¤´éƒ¨æ„æˆå¾ªç¯é“¾è¡¨
     temp->next = head;
 
     return head;
 }
 
-void count_off(Node *head, int n, int k, int m) {
-Node *temp = head;
+void count_off(Node *head, int n, int k, int m) 
+{
+    Node *temp = head;
     if (k == 1) {
         for (int i = 1; i < n; i++) {
             temp = temp->next;
         }
-    }else{
+    } else {
         for (int i = 1; i < k-1; i++) {
-        		temp = temp->next;
-    		}
+                temp = temp->next;
+            }
     }
+
     int num = 0;
     int count = 0;
+
     while (count < n) {
         num++;
+
         if (num == m) {
             count++;
-            if(count == n - 1){
-            	printf("%d", temp->next->data);
-            }else{
-               	printf("%d ", temp->next->data); 
-            }
-            
-            
+            printf("%d", temp->next->data);
+
+            if (count != n) {
+                printf(" ");
+            } 
+      
             temp->next = temp->next->next;
-            
             num = 0;
-        }else{
-            
+        } else {
             temp = temp->next;
         }
     }

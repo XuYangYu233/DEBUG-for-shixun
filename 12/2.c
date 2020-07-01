@@ -1,10 +1,14 @@
 #include <stdio.h>
+#include <math.h>
 
 #define PI 3.14159
-int main() {
-    float r;
-    scanf("%lf\n", &r);
-    printf("%.3f\n", PI * r * 2);
-    printf("%.3f", PI * r * r);
+
+int main() 
+{
+    double r;
+    scanf("%lf", &r);
+    printf("%.3f\n", round(PI * r * 2 * 1000) / 1000);
+    printf("%.3f", round(PI * r * r * 1000) / 1000);
     return 0;
 }
+
